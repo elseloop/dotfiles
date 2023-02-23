@@ -2,34 +2,19 @@
 alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
 alias reloadshell="source $HOME/.zshrc"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-alias ll="/opt/homebrew/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-directories-first"
-alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
-alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
-alias c="clear"
-alias compile="commit 'compile'"
-alias version="commit 'version'"
 
 # Directories
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
 alias sites="cd $HOME/Sites"
-alias lara="sites && cd laravel/"
-alias docs="lara && cd docs/"
-
-# Laravel
-alias a="php artisan"
-alias fresh="php artisan migrate:fresh --seed"
-alias tinker="php artisan tinker"
-alias seed="php artisan db:seed"
-alias serve="php artisan serve"
-
-# PHP
-alias cfresh="rm -rf vendor/ composer.lock && composer i"
-alias composer="php -d memory_limit=-1 /opt/homebrew/bin/composer"
+alias zconfig="code ~/.zshrc"
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
 alias watch="npm run watch"
+alias run='npm run'
+alias r = 'npm run'
+alias s = 'npm start'
 
 # Docker
 alias docker-composer="docker-compose"
@@ -40,8 +25,15 @@ alias mssql="docker run -e ACCEPT_EULA=Y -e SA_PASSWORD=LaravelWow1986! -p 1433:
 # Git
 alias gst="git status"
 alias gb="git branch"
-alias gc="git checkout"
+alias gco="git checkout"
 alias gl="git log --oneline --decorate --color"
+alias gwow='git log --all --graph --decorate --oneline --simplify-by-decoration'
+alias gpr='git pull --rebase origin'
+alias gfp='git fetch -p'
+alias gmain='gco main && gpr main && gfa'
+alias gdev='gco dev && gpr dev && gfa'
+alias gundo='git reset HEAD~'
+alias monthlog='git log --before={`date "+%Y-%m-%d"`} --after={`date "+%Y-%m-01"`} --author="`git config user.name`" --reverse --pretty=format:"%cd  %h  %s" --date=short'
 alias amend="git add . && git commit --amend --no-edit"
 alias commit="git add . && git commit -m"
 alias diff="git diff"
