@@ -37,7 +37,6 @@ brew 'yarn'
 
 # Apps
 cask '1password'
-cask '1password'
 cask 'background-music'
 cask 'bartender'
 cask 'caffeine'
